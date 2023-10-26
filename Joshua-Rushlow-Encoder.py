@@ -9,9 +9,14 @@ def encode(password):
         encoded_password += password[i]
     return encoded_password
 
+#Aaron Townsend
 
-def decode(password):
-    pass
+def decode(encoded_pass):
+    result = ''
+    for i in range(len(encoded_pass)):
+        num = encoded_pass[i]
+        result += chr((ord(num) - 3))
+    return result
 
 
 # main code
@@ -25,3 +30,4 @@ while True:
         print('The encoded password is ' + encoded_pw + ', and the original password is ' + decode(encoded_pw) + '.')
     elif choice == 3:
         exit()
+
